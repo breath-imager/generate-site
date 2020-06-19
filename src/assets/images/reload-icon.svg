@@ -1,0 +1,25 @@
+<svg width="101" height="101" viewBox="0 0 101 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M50.5 101C78.3904 101 101 78.3904 101 50.5C101 22.6096 78.3904 0 50.5 0C22.6096 0 0 22.6096 0 50.5C0 78.3904 22.6096 101 50.5 101Z" fill="url(#paint0_radial)"/>
+<path d="M30 36.7462V47.2462H40.5" stroke="#FFF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+  <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="360 50 50" to="0 50 50" repeatCount="indefinite"></animateTransform>
+</path>
+
+<path d="M64.1075 45.4962C62.3035 40.3981 58.01 36.582 52.7355 35.3886C47.461 34.1952 41.943 35.7913 38.12 39.6162L30 47.2462" stroke="#FFF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+  <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="360 50 50" to="0 50 50" repeatCount="indefinite"></animateTransform>
+</path>
+
+<path d="M68.5 64.7462V54.2462H58" stroke="#FFF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+  <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="360 50 50" to="0 50 50" repeatCount="indefinite"></animateTransform>
+</path>
+
+<path d="M68.5001 54.2462L60.3801 61.7228C56.5571 65.4708 51.0391 67.0348 45.7646 65.8654C40.49 64.6959 36.1966 60.9566 34.3926 55.961" stroke="#FFF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+  <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="360 50 50" to="0 50 50" repeatCount="indefinite"></animateTransform>
+</path>
+
+<defs>
+<radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(50.5 50.5) rotate(-162.937) scale(130.394 129.819)">
+<stop offset="0.000765414" stop-color="#6C6C6C"/>
+<stop offset="1"/>
+</radialGradient>
+</defs>
+</svg>
