@@ -1,7 +1,7 @@
 import $ from "jquery"
 
 /**
- * GRAHAM
+ * 
  *
  * This is everything that was originall in scripts.js
  * I created a file called gatsby-node.js in the root of this project
@@ -35,7 +35,7 @@ export const debounce = (func, wait, immediate) => {
 
 export const applyJqueryVoodoo = () => {
   /**
-   * GRAHAM
+   * 
    *
    * I declared all these variables with 'let'
    *
@@ -53,11 +53,6 @@ export const applyJqueryVoodoo = () => {
   let scroll_distance
   let $navbar
 
-  $(document).ready(function () {
-    $(".nk-navbar .nk-nav li").removeClass("active")
-    //previously active menu item
-    $("#menu-home").addClass("active")
-  })
 
   $(document).ready(function () {
     $navbar = $(".navbar[color-on-scroll]")

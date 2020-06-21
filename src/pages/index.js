@@ -2,7 +2,6 @@ import React from "react"
 
 
 import filterImage from "../assets/images/home/filters-section.jpg"
-import logoImage from "../assets/images/logo.png"
 import adamImage from "../assets/images/learn/adam-marshal.jpg"
 import imageFilter2 from "../assets/images/home/filter2.jpg"
 import imageAppStoreLogo from "../assets/images/app-store-logo.png"
@@ -10,7 +9,7 @@ import Layout from "../components/layout"
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout page='home'>
       <div id="home" className="wrapper">
         <header>
           <div className="overlay"></div>

@@ -5,7 +5,7 @@ import Nav from "./nav"
 import Foot from "./foot"
 
 /**
- * GRAHAM
+ * 
  *
  * I'm importing the jquery and bootstrap files in the order
  * they were in the original index.html or whatever
@@ -20,15 +20,15 @@ import "../styles/fonts.css"
 import "../styles/generate.css"
 
 /**
- * GRAHAM
+ * GRHAM
  *
  * This is the original scripts.js file, ported to something compatible
  * with react. More details on that inside this file I made below 👇
  */
 import { applyJqueryVoodoo } from "../assets/js/legacy/jquery.init"
 
-/**
- * GRAHAM
+/*
+ * 
  *
  * This is a Wrapper component I made so that every page doesn't need to individually
  * include helmet, nav, and footer. The syntax to use something like this would be
@@ -50,19 +50,20 @@ import { applyJqueryVoodoo } from "../assets/js/legacy/jquery.init"
  * I've removed the Head, Foot, and Nav tags from your other pages
  *
  */
-const Layout = ({ children }) => {
+const Layout = (props) => {
   /**
-   * GRAHAM
+   * 
    *  This useEffect is tantamount to saying when everything has rendered on screen,
    *  apply the functions that were originally in scripts.js
    *
    */
+
   useEffect(() => applyJqueryVoodoo(), [])
   return (
     <div>
       <Head />
-      <Nav />
-      {children}
+      <Nav page={props.page} />
+      {props.children}
       <Foot />
     </div>
   )
