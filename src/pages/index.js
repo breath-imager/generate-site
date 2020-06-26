@@ -5,7 +5,11 @@ import filterImage from "../assets/images/home/filters-section.jpg"
 import adamImage from "../assets/images/learn/adam-marshal.jpg"
 import imageFilter2 from "../assets/images/home/filter2.jpg"
 import imageAppStoreLogo from "../assets/images/app-store-logo.png"
+import learnClips from "../assets/images/learn/learn_clips.jpg"
+import refractionFestImage from "../assets/images/home/home_banner_refraction.jpg"
+import homeVideo from "../assets/video/home_video_1_xs2.mp4"
 import Layout from "../components/layout"
+
 
 export default function Home() {
   return (
@@ -20,7 +24,7 @@ export default function Home() {
             loop="loop"
           >
             <source
-              src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4"
+              src={homeVideo}
               type="video/mp4"
             />
           </video>
@@ -95,16 +99,15 @@ export default function Home() {
             <div className="row featuredTop">
               <div className="col-12 col-md-7">
                 <img
-                  src={adamImage}
+                  src={learnClips}
                   className="img-fluid fit-image"
-                  alt="Adam marshal"
+                  alt="Sebastian Stam"
                 />
               </div>
               <div className="col-12 col-md-5">
                 <hr className="thick" />
                 <h3>
-                  Adam Marshal shows you how to save and share filter
-                  combinations.
+                Learn how to shoot multiple shots and cut them together.
                 </h3>
                 <a href="#" className="btn">
                   watch tutorial
@@ -125,7 +128,7 @@ export default function Home() {
               </div>
               <div className="col-12 col-md-7">
                 <img
-                  src={imageFilter2}
+                  src={refractionFestImage}
                   className="img-fluid fit-image"
                   alt="image Filter Generate"
                 />
@@ -138,7 +141,7 @@ export default function Home() {
         <section className="generateProduct">
           <div className="container-fluid">
             <hr className="thick"></hr>
-            <h1>Two was to create</h1>
+            <h1>Two ways to create</h1>
             <div className="row row-eq-height">
               <div className="col-12 col-md">
                 <h2>Generate Free</h2>
@@ -195,7 +198,7 @@ export default function Home() {
               <div className="col-12 col-md">
                 <hr className="thick d-block d-sm-none" />
                 <h2>Generate Pro</h2>
-                <p>suscription</p>
+                <p>Subscription</p>
                 <a href="#" className="btn">
                   Subscribe
                 </a>

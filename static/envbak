@@ -1,0 +1,6 @@
+PARSE_PROD_API_KEY = e0c9a4d9-55ce-47cb-b17c-68496b6ae3a0
+PARSE_PROD_APP_ID = prod-generate
+PARSE_PROD_SERVER_URL = https://generate-parse-prod.herokuapp.com/parse
+PARSE_DEV_APP_ID = dev-generate
+PARSE_DEV_SERVER_URL = https://generate-parse-dev.herokuapp.com/parse?
+PARSE_DEV_API_KEY = ldl6kpJDVAeATQWpAP2e7z8TuLQZlV0Vjpo5a8om

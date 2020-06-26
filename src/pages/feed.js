@@ -1,7 +1,7 @@
+
 import Parse from "parse"
 import React, { useEffect } from "react"
 import Layout from "../components/layout"
-
 
 import reloadIcon from "../assets/images/reload-icon.png"
 
@@ -13,15 +13,28 @@ const initializeParse = () => {
   // then rewrite this as
   //  Parse.serverURL = process.env.PARSE_SERVER_URL
   // or something like that
-  Parse.initialize("dev-generate", process.env.REACT_APP_API_KEY)
+  Parse.initialize("dev-generate"  , process.env.PARSE_DEV_API_KEY)
   Parse.serverURL = "https://generate-parse-dev.herokuapp.com/parse"
 }
+
 
 const getFeed = async () => {
   // Define a name for our model ...
   // I don't understand Parse well but it seems unlike SQL
   // Data is just amorphous and you just query for data that matches
   // a set of parameteres
+
+  /** 
+   * 
+   * db write test
+   * 
+   */
+  /*const WriteTest = Parse.Object.extend("WriteTest")
+  const writeTest = new WriteTest();
+  writeTest.set("written", true);
+  writeTest.save();*/
+  
+  
   const PostFavourite = Parse.Object.extend("PostFavourite")
 
   // Initialize the query.
@@ -80,6 +93,7 @@ const Feed = ({ data }) => {
 export default function Home() {
   const [parseResponse, setParseResponse] = React.useState(null)
 
+  
   useEffect(() => {
     const init = async () => {
       initializeParse()
@@ -90,6 +104,7 @@ export default function Home() {
     init()
   }, [])
 
+  
   if (!parseResponse || parseResponse.legnth === 0) {
     // Replace null with a loading screen component
     return null

@@ -2,8 +2,7 @@ import React from "react"
 import logoImage from "../assets/images/logo.png"
 
 let navbarClassName = '' 
-let feed = false
-let main = false
+
 let feedNavbarItem = 'nav-item'
 let mainNavbarItem = 'nav-item'
 
