@@ -8,12 +8,10 @@ import reloadIcon from "../assets/images/reload-icon.png"
 
 
 const initializeParse = () => {
-  // It's probably in your best interest to store this in a .env file
-  // then load that .env file with the 'dotenv' library
-  // then rewrite this as
-  //  Parse.serverURL = process.env.PARSE_SERVER_URL
-  // or something like that
-  Parse.initialize("dev-generate"  , process.env.PARSE_DEV_API_KEY)
+  // stored key in a .env file in root directory
+
+  Parse.initialize("dev-generate"  , process.env.PARSE_DEV_API__READONLY_KEY)
+  //Parse.initialize("dev-generate"  , '')
   Parse.serverURL = "https://generate-parse-dev.herokuapp.com/parse"
 }
 
@@ -29,10 +27,14 @@ const getFeed = async () => {
    * db write test
    * 
    */
-  /*const WriteTest = Parse.Object.extend("WriteTest")
+  
+   /*
+  const WriteTest = Parse.Object.extend("WriteTest")
+  //const WriteTest = Parse.Object.extend("Post")
   const writeTest = new WriteTest();
   writeTest.set("written", true);
-  writeTest.save();*/
+  writeTest.save();
+  */
   
   
   const PostFavourite = Parse.Object.extend("PostFavourite")

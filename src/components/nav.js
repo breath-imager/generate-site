@@ -3,22 +3,27 @@ import logoImage from "../assets/images/logo.png"
 
 let navbarClassName = '' 
 
-let feedNavbarItem = 'nav-item'
-let mainNavbarItem = 'nav-item'
+let feedNavbarItem,mainNavbarItem,learnNavbarItem  = 'nav-item'
 
 
 export default function Nav(props) {
   /**
    *  Page dependent parameters
    */
-  if (props.page == 'feed') { 
-    navbarClassName = 'navbar navbar-expand-lg navbar-transparent fixed-top navbarFeed'
-    feedNavbarItem = 'nav-item active'
+  switch (props.page) { 
+    case 'feed':
+      navbarClassName = 'navbar navbar-expand-lg navbar-transparent fixed-top navbarFeed'
+      feedNavbarItem = 'nav-item active'
+      break
     
-  }
-  else { 
-    navbarClassName = 'navbar navbar-expand-lg navbar-transparent fixed-top' 
-    mainNavbarItem = 'nav-item active'
+    case 'learn':
+      navbarClassName = 'navbar navbar-expand-lg navbar-transparent fixed-top' 
+      learnNavbarItem = 'nav-item active'
+      break
+
+    default:
+      navbarClassName = 'navbar navbar-expand-lg navbar-transparent fixed-top' 
+      mainNavbarItem = 'nav-item active'
   }
   
   return (
@@ -51,12 +56,12 @@ export default function Nav(props) {
               </a>
             </li>
             <li id="menu-feed" className={feedNavbarItem}>
-              <a className="nav-link" href="feed">
+              <a className="nav-link" href="/feed">
                 Feed
               </a>
             </li>
-            <li id="menu-learn" className="nav-item">
-              <a className="nav-link" href="/learn.html">
+            <li id="menu-learn" className={learnNavbarItem}>
+              <a className="nav-link" href="/learn">
                 Learn
               </a>
             </li>

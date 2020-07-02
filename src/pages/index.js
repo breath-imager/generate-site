@@ -2,8 +2,7 @@ import React from "react"
 
 
 import filterImage from "../assets/images/home/filters-section.jpg"
-import adamImage from "../assets/images/learn/adam-marshal.jpg"
-import imageFilter2 from "../assets/images/home/filter2.jpg"
+
 import imageAppStoreLogo from "../assets/images/app-store-logo.png"
 import learnClips from "../assets/images/learn/learn_clips.jpg"
 import refractionFestImage from "../assets/images/home/home_banner_refraction.jpg"
