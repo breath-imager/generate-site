@@ -33,7 +33,7 @@ export default function Home() {
               <h2>You’re unique. Your pictures should be too.</h2>
             </div>
             <div className="vbottom homeButton">
-              <a href="#" className="btn">
+              <a href="https://apps.apple.com/ca/app/generate-video-photo-effects/id808563377" className="btn">
                 Download Generate
               </a>
             </div>
@@ -51,7 +51,7 @@ export default function Home() {
               Realize your vision with custom effect combinations. Use our
               editing tools to take presets to new heights.
             </h2>
-            <a href="#" className="btn">
+            <a href="https://apps.apple.com/ca/app/generate-video-photo-effects/id808563377" className="btn">
               Download Generate
             </a>
           </div>
@@ -108,9 +108,9 @@ export default function Home() {
                 <h3>
                 Learn how to shoot multiple shots and cut them together.
                 </h3>
-                <a href="#" className="btn">
-                  watch tutorial
-                </a>
+                <a href="#" className="btn video video-modal" data-video="https://player.vimeo.com/video/432535010" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
+
+               
               </div>
             </div>
             <div className="row  featuredBottom">
@@ -121,16 +121,18 @@ export default function Home() {
                   An online festival presented in and around the Summer Solstice
                   in natural and digital environments.
                 </p>
-                <a href="#" className="btn">
-                  watch tutorial
+                <a href="https://www.refractionfestival.com" className="btn" target="_blank">
+                  Visit Website
                 </a>
               </div>
               <div className="col-12 col-md-7">
+              <a href="https://www.refractionfestival.com" target="_blank">
                 <img
                   src={refractionFestImage}
                   className="img-fluid fit-image"
                   alt="image Filter Generate"
                 />
+              </a>
               </div>
             </div>
           </div>
@@ -145,7 +147,7 @@ export default function Home() {
               <div className="col-12 col-md">
                 <h2>Generate Free</h2>
                 <p>Basic Features</p>
-                <a href="#" className="btn">
+                <a href="https://apps.apple.com/ca/app/generate-video-photo-effects/id808563377" className="btn">
                   Try Generate
                 </a>
                 <div className="featuresContent">
@@ -186,7 +188,7 @@ export default function Home() {
                     Shoot what you want, when you want, from beginning to end
                   </p>
                 </div>
-                <a href="#" target="_blank" className="logoAppStore">
+                <a href="https://apps.apple.com/ca/app/generate-video-photo-effects/id808563377" target="_blank" className="logoAppStore">
                   <img
                     src={imageAppStoreLogo}
                     className="img-fluid"
@@ -198,7 +200,7 @@ export default function Home() {
                 <hr className="thick d-block d-sm-none" />
                 <h2>Generate Pro</h2>
                 <p>Subscription</p>
-                <a href="#" className="btn">
+                <a href="https://apps.apple.com/ca/app/generate-video-photo-effects/id808563377" className="btn">
                   Subscribe
                 </a>
                 <div className="featuresContent">
@@ -256,6 +258,18 @@ export default function Home() {
             </div>
           </div>
         </section>
+      </div>
+        
+      {/* <!-- dialog-modal-videos --> */}
+      <div className="modal fade" id="videoModal" tabIndex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div className="modal-dialog">
+              <div className="modal-content">
+                  <div className="modal-body">
+                      <button type="button" className="close" data-dismiss="modal" aria-label="Close"></button>
+                      <iframe title="Blank" width="100%" height="100%" src="" frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe>
+                  </div>
+              </div>
+          </div>
       </div>
     </Layout>
   )

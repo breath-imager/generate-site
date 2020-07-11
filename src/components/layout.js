@@ -4,6 +4,7 @@ import Head from "./head"
 import Nav from "./nav"
 import Foot from "./foot"
 
+
 /**
  * 
  *
@@ -19,13 +20,14 @@ import "../styles/bootstrap.min.css"
 import "../styles/fonts.css"
 import "../styles/generate.css"
 
+
 /**
- * GRHAM
+ * 
  *
  * This is the original scripts.js file, ported to something compatible
  * with react. More details on that inside this file I made below 👇
  */
-import { applyJqueryVoodoo } from "../assets/js/legacy/jquery.init"
+import { applyJqueryVoodoo, applyVideoListeners, applyModalListeners } from "../assets/js/legacy/jquery.init"
 
 /*
  * 
@@ -58,13 +60,13 @@ const Layout = (props) => {
    *
    */
 
-  useEffect(() => applyJqueryVoodoo(), [])
+  useEffect(() => { applyJqueryVoodoo(); applyVideoListeners(); applyModalListeners(); }, [])
   return (
     <div>
       <Head />
       <Nav page={props.page} />
       {props.children}
-      <Foot />
+      <Foot page={props.page} />
     </div>
   )
 }

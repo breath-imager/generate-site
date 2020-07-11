@@ -3,7 +3,7 @@ import Parse from "parse"
 import React, { useEffect } from "react"
 import Layout from "../components/layout"
 
-import reloadIcon from "../assets/images/reload-icon.png"
+import reloadIcon from "../assets/images/reload-icon.svg"
 
 
 
@@ -141,7 +141,7 @@ export default function Home() {
           <p>
             <strong>Generate</strong> - The mobile photo and video editing app
             for creatives{" "}
-            <a href="#" className="btn">
+            <a href="https://apps.apple.com/ca/app/generate-video-photo-effects/id808563377" className="btn">
               Get Now
             </a>
           </p>

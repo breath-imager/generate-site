@@ -33,6 +33,52 @@ export const debounce = (func, wait, immediate) => {
   }
 }
 
+export const applyVideoListeners = () => {
+  $(function () {
+    $(".video").click(function () {
+      const theModal = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto =
+          videoSRC +
+          "?byline=0&amp;portrait=0&amp;color=3a6774&amp;autoplay=1&amp;loop=1";
+      $(theModal + " iframe").attr("src", videoSRCauto);
+      $(theModal + " button.close").click(function () {
+        $(theModal + " iframe").attr("src", videoSRC);
+      });
+    });
+  });
+};
+
+export const applyModalListeners = () => {
+  // This just makes all bootstrap native .modals jive together
+  $(".modal")
+    .on("hidden.bs.modal", function (e) {
+      if ($(".modal:visible").length) {
+        $(".modal-backdrop")
+          .first()
+          .css(
+            "z-index",
+            parseInt($(".modal:visible").last().css("z-index")) - 10
+          );
+        $("body").addClass("modal-open");
+      }
+    })
+    .on("show.bs.modal", function (e) {
+      if ($(".modal:visible").length) {
+        $(".modal-backdrop.in")
+          .first()
+          .css(
+            "z-index",
+            parseInt($(".modal:visible").last().css("z-index")) + 10
+          );
+        $(this).css(
+          "z-index",
+          parseInt($(".modal-backdrop.in").first().css("z-index")) + 10
+        );
+      }
+    });
+};
+
 export const applyJqueryVoodoo = () => {
   /**
    * 
@@ -84,4 +130,5 @@ export const applyJqueryVoodoo = () => {
       }
     }, 17),
   }
+
 }

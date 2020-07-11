@@ -3,7 +3,7 @@ import logoImage from "../assets/images/logo.png"
 
 let navbarClassName = '' 
 
-let feedNavbarItem,mainNavbarItem,learnNavbarItem  = 'nav-item'
+let feedNavbarItem,mainNavbarItem,learnNavbarItem, contactNavbarItem  = 'nav-item'
 
 
 export default function Nav(props) {
@@ -20,6 +20,11 @@ export default function Nav(props) {
       navbarClassName = 'navbar navbar-expand-lg navbar-transparent fixed-top' 
       learnNavbarItem = 'nav-item active'
       break
+
+    case 'contact':
+        navbarClassName = 'navbar navbar-expand-lg navbar-transparent fixed-top' 
+        contactNavbarItem = 'nav-item active'
+        break
 
     default:
       navbarClassName = 'navbar navbar-expand-lg navbar-transparent fixed-top' 
@@ -65,8 +70,8 @@ export default function Nav(props) {
                 Learn
               </a>
             </li>
-            <li id="menu-contact" className="nav-item">
-              <a className="nav-link" href="/contact.html">
+            <li id="menu-contact" className={contactNavbarItem}>
+              <a className="nav-link" href="/contact">
                 Contact
               </a>
             </li>

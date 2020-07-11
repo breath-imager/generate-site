@@ -1,5 +1,4 @@
-import React, {useState} from "react"
-import Modal from "react-modal"
+import React from "react"
 
 import Layout from "../components/layout"
 import learnHeader from "../assets/images/learn/learn-header.jpg"
@@ -33,27 +32,7 @@ export default function Home() {
                         <div className="col-12 col-md-5">
                             <hr className="thick"/>
                             <h3>Learn how to build custom filters, remix, and and save them.</h3>
-                            <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#modalVM1">WATCH TUTORIAL</button>
-                            <div className="modal fade" id="modalVM1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                            aria-hidden="true">
-                                <div className="modal-dialog modal-lg" role="document">
-                                    <div className="modal-content">
-                                        <div className="modal-body mb-0 p-0">
-                                            <div className="embed-responsive embed-responsive-16by9 z-depth-1-half">
-                                            <iframe className="embed-responsive-item" src="https://player.vimeo.com/video/432534020"
-                                                allowfullscreen></iframe>
-                                            </div>
-
-                                        </div>
-                                        <div className="modal-footer justify-content-center flex-column flex-md-row">
-                                            
-                                            <button type="button" className="btn btn-outline-primary btn-rounded btn-md ml-4"
-                                            data-dismiss="modal">Close</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <a href="#" className="btn video video-modal" data-video="https://player.vimeo.com/video/432534020" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
                         </div>
                     </div>
                     <div className="row featuredTop">
@@ -62,28 +41,8 @@ export default function Home() {
                     </div>
                     <div className="col-12 col-md-5">
                         <hr className="thick"/>
-                        <h3>Learn how to shoot multiple shots and cut them together. </h3>
-                        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#modalVM2">WATCH TUTORIAL</button>
-                            <div className="modal fade" id="modalVM2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                            aria-hidden="true">
-                                <div className="modal-dialog modal-lg" role="document">
-                                    <div className="modal-content">
-                                        <div className="modal-body mb-0 p-0">
-                                            <div className="embed-responsive embed-responsive-16by9 z-depth-1-half">
-                                            <iframe className="embed-responsive-item" src="https://player.vimeo.com/video/432535010"
-                                                allowfullscreen></iframe>
-                                            </div>
-
-                                        </div>
-                                        <div className="modal-footer justify-content-center flex-column flex-md-row">
-                                            
-                                            <button type="button" className="btn btn-outline-primary btn-rounded btn-md ml-4"
-                                            data-dismiss="modal">Close</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <h3>Learn how to shoot multiple shots and cut them together.</h3>
+                        <a href="#" className="btn video video-modal" data-video="https://player.vimeo.com/video/432535010" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
                     </div>
                     </div>
 
@@ -94,37 +53,28 @@ export default function Home() {
                     <div className="col-12 col-md-5">
                         <hr className="thick"/>
                         <h3>Learn how make your visuals dance with your own music.</h3>
-                        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#modalVM3">WATCH TUTORIAL</button>
-                            <div className="modal fade" id="modalVM3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                            aria-hidden="true">
-                                <div className="modal-dialog modal-lg" role="document">
-                                    <div className="modal-content">
-                                        <div className="modal-body mb-0 p-0">
-                                            <div className="embed-responsive embed-responsive-16by9 z-depth-1-half">
-                                            <iframe className="embed-responsive-item" src="https://player.vimeo.com/video/432535264"
-                                                allowfullscreen></iframe>
-                                            </div>
-
-                                        </div>
-                                        <div className="modal-footer justify-content-center flex-column flex-md-row">
-                                            
-                                            <button type="button" className="btn btn-outline-primary btn-rounded btn-md ml-4"
-                                            data-dismiss="modal">Close</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <a href="#" className="btn video video-modal" data-video="https://player.vimeo.com/video/432535264" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
+          
+                       
                     </div>
                     </div>
 
                 </div>
             </section>
+        </div>
+            
+        {/* <!-- dialog-modal-videos --> */}
+        <div className="modal fade" id="videoModal" tabIndex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div className="modal-dialog">
+                <div className="modal-content">
+                    <div className="modal-body">
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close"></button>
+                        <iframe title="Blank" width="100%" height="100%" src="" frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-
-
-
-      </div>
     </Layout>
   )
 }
