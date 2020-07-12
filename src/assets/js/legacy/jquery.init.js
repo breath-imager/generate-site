@@ -1,7 +1,7 @@
 import $ from "jquery"
 
 /**
- * 
+ *
  *
  * This is everything that was originall in scripts.js
  * I created a file called gatsby-node.js in the root of this project
@@ -40,14 +40,14 @@ export const applyVideoListeners = () => {
         videoSRC = $(this).attr("data-video"),
         videoSRCauto =
           videoSRC +
-          "?byline=0&amp;portrait=0&amp;color=3a6774&amp;autoplay=1&amp;loop=1";
-      $(theModal + " iframe").attr("src", videoSRCauto);
+          "?byline=0&amp;portrait=0&amp;color=3a6774&amp;autoplay=1&amp;loop=1"
+      $(theModal + " iframe").attr("src", videoSRCauto)
       $(theModal + " button.close").click(function () {
-        $(theModal + " iframe").attr("src", videoSRC);
-      });
-    });
-  });
-};
+        $(theModal + " iframe").attr("src", videoSRC)
+      })
+    })
+  })
+}
 
 export const applyModalListeners = () => {
   // This just makes all bootstrap native .modals jive together
@@ -59,8 +59,8 @@ export const applyModalListeners = () => {
           .css(
             "z-index",
             parseInt($(".modal:visible").last().css("z-index")) - 10
-          );
-        $("body").addClass("modal-open");
+          )
+        $("body").addClass("modal-open")
       }
     })
     .on("show.bs.modal", function (e) {
@@ -70,18 +70,18 @@ export const applyModalListeners = () => {
           .css(
             "z-index",
             parseInt($(".modal:visible").last().css("z-index")) + 10
-          );
+          )
         $(this).css(
           "z-index",
           parseInt($(".modal-backdrop.in").first().css("z-index")) + 10
-        );
+        )
       }
-    });
-};
+    })
+}
 
 export const applyJqueryVoodoo = () => {
   /**
-   * 
+   *
    *
    * I declared all these variables with 'let'
    *
@@ -94,41 +94,43 @@ export const applyJqueryVoodoo = () => {
    * That's pretty much the only change I made to this
    * other than wrap it in a function
    */
-  let transparent = true
-  let generate
-  let scroll_distance
-  let $navbar
+  return new Promise(resolve => {
+    let transparent = true
+    let generate
+    let scroll_distance
+    let $navbar
 
+    $(document).ready(function () {
+      $navbar = $(".navbar[color-on-scroll]")
+      scroll_distance = $navbar.attr("color-on-scroll") || 500
 
-  $(document).ready(function () {
-    $navbar = $(".navbar[color-on-scroll]")
-    scroll_distance = $navbar.attr("color-on-scroll") || 500
+      // Check if we have the class "navbar-color-on-scroll" then add the function to remove the class "navbar-transparent" so it will transform to a plain color.
+      if ($(".navbar[color-on-scroll]").length !== 0) {
+        generate.checkScrollForTransparentNavbar()
+        $(window).on("scroll", generate.checkScrollForTransparentNavbar)
+      }
 
-    // Check if we have the class "navbar-color-on-scroll" then add the function to remove the class "navbar-transparent" so it will transform to a plain color.
-    if ($(".navbar[color-on-scroll]").length !== 0) {
-      generate.checkScrollForTransparentNavbar()
-      $(window).on("scroll", generate.checkScrollForTransparentNavbar)
+      resolve()
+    })
+
+    generate = {
+      misc: {
+        navbar_menu_visible: 0,
+      },
+
+      checkScrollForTransparentNavbar: debounce(function () {
+        if ($(document).scrollTop() > scroll_distance) {
+          if (transparent) {
+            transparent = false
+            $(".navbar[color-on-scroll]").removeClass("navbar-transparent")
+          }
+        } else {
+          if (!transparent) {
+            transparent = true
+            $(".navbar[color-on-scroll]").addClass("navbar-transparent")
+          }
+        }
+      }, 17),
     }
   })
-
-  generate = {
-    misc: {
-      navbar_menu_visible: 0,
-    },
-
-    checkScrollForTransparentNavbar: debounce(function () {
-      if ($(document).scrollTop() > scroll_distance) {
-        if (transparent) {
-          transparent = false
-          $(".navbar[color-on-scroll]").removeClass("navbar-transparent")
-        }
-      } else {
-        if (!transparent) {
-          transparent = true
-          $(".navbar[color-on-scroll]").addClass("navbar-transparent")
-        }
-      }
-    }, 17),
-  }
-
 }

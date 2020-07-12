@@ -4,9 +4,8 @@ import Head from "./head"
 import Nav from "./nav"
 import Foot from "./foot"
 
-
 /**
- * 
+ *
  *
  * I'm importing the jquery and bootstrap files in the order
  * they were in the original index.html or whatever
@@ -20,17 +19,20 @@ import "../styles/bootstrap.min.css"
 import "../styles/fonts.css"
 import "../styles/generate.css"
 
-
 /**
- * 
+ *
  *
  * This is the original scripts.js file, ported to something compatible
  * with react. More details on that inside this file I made below 👇
  */
-import { applyJqueryVoodoo, applyVideoListeners, applyModalListeners } from "../assets/js/legacy/jquery.init"
+import {
+  applyJqueryVoodoo,
+  applyVideoListeners,
+  applyModalListeners,
+} from "../assets/js/legacy/jquery.init"
 
 /*
- * 
+ *
  *
  * This is a Wrapper component I made so that every page doesn't need to individually
  * include helmet, nav, and footer. The syntax to use something like this would be
@@ -52,15 +54,20 @@ import { applyJqueryVoodoo, applyVideoListeners, applyModalListeners } from "../
  * I've removed the Head, Foot, and Nav tags from your other pages
  *
  */
-const Layout = (props) => {
+const Layout = props => {
   /**
-   * 
+   *
    *  This useEffect is tantamount to saying when everything has rendered on screen,
    *  apply the functions that were originally in scripts.js
    *
    */
 
-  useEffect(() => { applyJqueryVoodoo(); applyVideoListeners(); applyModalListeners(); }, [])
+  useEffect(() => {
+    applyJqueryVoodoo().then(() => {
+      applyVideoListeners()
+      applyModalListeners()
+    })
+  }, [])
   return (
     <div>
       <Head />
