@@ -9,6 +9,7 @@ import refractionFestImage from "../assets/images/home/home_banner_refraction.jp
 import homeVideo from "../assets/video/home_video_1_xs2.mp4"
 import Layout from "../components/layout"
 
+const APP_URL = 'https://apps.apple.com/us/app/generate-video-photo-effects/id808563377'
 
 export default function Home() {
   return (
@@ -33,7 +34,7 @@ export default function Home() {
               <h2>You’re unique. Your pictures should be too.</h2>
             </div>
             <div className="vbottom homeButton">
-              <a href="https://apps.apple.com/ca/app/generate-video-photo-effects/id808563377" className="btn">
+              <a href={APP_URL} className="btn">
                 Download Generate
               </a>
             </div>
@@ -51,7 +52,7 @@ export default function Home() {
               Realize your vision with custom effect combinations. Use our
               editing tools to take presets to new heights.
             </h2>
-            <a href="https://apps.apple.com/ca/app/generate-video-photo-effects/id808563377" className="btn">
+            <a href={APP_URL} className="btn">
               Download Generate
             </a>
           </div>
@@ -147,7 +148,7 @@ export default function Home() {
               <div className="col-12 col-md">
                 <h2>Generate Free</h2>
                 <p>Basic Features</p>
-                <a href="https://apps.apple.com/ca/app/generate-video-photo-effects/id808563377" className="btn">
+                <a href={APP_URL}  className="btn">
                   Try Generate
                 </a>
                 <div className="featuresContent">
@@ -188,7 +189,7 @@ export default function Home() {
                     Shoot what you want, when you want, from beginning to end
                   </p>
                 </div>
-                <a href="https://apps.apple.com/ca/app/generate-video-photo-effects/id808563377" target="_blank" className="logoAppStore">
+                <a href={APP_URL}  target="_blank" className="logoAppStore">
                   <img
                     src={imageAppStoreLogo}
                     className="img-fluid"
@@ -200,7 +201,7 @@ export default function Home() {
                 <hr className="thick d-block d-sm-none" />
                 <h2>Generate Pro</h2>
                 <p>Subscription</p>
-                <a href="https://apps.apple.com/ca/app/generate-video-photo-effects/id808563377" className="btn">
+                <a href={APP_URL}  className="btn">
                   Subscribe
                 </a>
                 <div className="featuresContent">

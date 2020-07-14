@@ -141,7 +141,7 @@ export default function Home() {
           <p>
             <strong>Generate</strong> - The mobile photo and video editing app
             for creatives{" "}
-            <a href="https://apps.apple.com/ca/app/generate-video-photo-effects/id808563377" className="btn">
+            <a href="https://apps.apple.com/us/app/generate-video-photo-effects/id808563377" className="btn">
               Get Now
             </a>
           </p>

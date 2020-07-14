@@ -1,7 +1,8 @@
 import React from "react"
 import Touch from "./touch"
-import Newsletter from "./newsletter"
+
 import imageAppStoreLogo from "../assets/images/app-store-logo.png"
+const APP_URL = 'https://apps.apple.com/us/app/generate-video-photo-effects/id808563377'
 
 export default function Foot(props){
 
@@ -43,7 +44,7 @@ export default function Foot(props){
                         <p>© Generate 2020. All rights reserved.</p>
                     </div>
                     <div className="col-12 col-md-2 my-auto d-none d-sm-block">
-                        <a href="https://apps.apple.com/ca/app/generate-video-photo-effects/id808563377" target="_blank" className="logoAppStore">
+                        <a href={APP_URL} target="_blank" className="logoAppStore">
                             <img src={imageAppStoreLogo} className="img-fluid" alt="logo app store"/>
                         </a>
                     </div>

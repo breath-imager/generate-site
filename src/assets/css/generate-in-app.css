@@ -1170,7 +1170,7 @@ ul.discStyle li:before {
   }
 
   .navbar-nav .nav-item a::after {
-    content: ',';
+    content: '';
   }
 
   .navbar-nav .nav-item:last-of-type a::after {
