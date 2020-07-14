@@ -15,9 +15,9 @@ import Foot from "./foot"
  * b) ensures they load in the order I specify, agnostic of network
  *
  */
-import "../styles/bootstrap.min.css"
-import "../styles/fonts.css"
-import "../styles/generate.css"
+import "../assets/vendor/bootstrap/css/bootstrap.min.css"
+import "../assets/css/fonts.css"
+import "../assets/css/generate.css"  
 
 /**
  *

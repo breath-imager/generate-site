@@ -44,7 +44,7 @@ export default function Foot(props){
                         <p>© Generate 2020. All rights reserved.</p>
                     </div>
                     <div className="col-12 col-md-2 my-auto d-none d-sm-block">
-                        <a href={APP_URL} target="_blank" className="logoAppStore">
+                        <a href={APP_URL} target="_blank" rel="noreferrer" className="logoAppStore">
                             <img src={imageAppStoreLogo} className="img-fluid" alt="logo app store"/>
                         </a>
                     </div>

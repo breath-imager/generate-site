@@ -15,7 +15,6 @@ export default function Home() {
       handleSubmit,
       setError,
       errors,
-      reset,
       formState: { isSubmitting }
     } = useForm()
 
