@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form"
 import Layout from "../components/layout"
 import contactHeader from "../assets/images/contact/contact-header.jpg"
 
-//const GATEWAY_URL = "https://generate-sendgrid.herokuapp.com/subscribe" 
-const GATEWAY_URL = "http://ptsv2.com/t/ew/post"
+const GATEWAY_URL = "https://generate-sendgrid.herokuapp.com/subscribe" 
+//const GATEWAY_URL = "http://ptsv2.com/t/ew/post"
 const required = "This field is required";
 
 export default function Home() {

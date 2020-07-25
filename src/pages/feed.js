@@ -10,9 +10,9 @@ import reloadIcon from "../assets/images/reload-icon.svg"
 const initializeParse = () => {
   // stored key in a .env file in root directory
 
-  Parse.initialize("dev-generate"  , process.env.PARSE_DEV_API__READONLY_KEY)
+  Parse.initialize("prod-generate"  , process.env.PARSE_PROD_API_KEY)
   //Parse.initialize("dev-generate"  , '')
-  Parse.serverURL = "https://generate-parse-dev.herokuapp.com/parse"
+  Parse.serverURL = "https://generate-parse-prod.herokuapp.com/parse"
 }
 
 
