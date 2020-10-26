@@ -10,9 +10,9 @@ import reloadIcon from "../assets/images/reload-icon.svg"
 const initializeParse = () => {
   // stored key in a .env file in root directory
 
-  Parse.initialize("prod-generate"  , process.env.PARSE_PROD_API_KEY)
+  Parse.initialize("dev-generate"  , process.env.PARSE_PROD_API_KEY)
   //Parse.initialize("dev-generate"  , '')
-  Parse.serverURL = "https://generate-parse-prod.herokuapp.com/parse"
+  Parse.serverURL = "https://generate-parse-dev.herokuapp.com/parse"
 }
 
 
@@ -36,7 +36,8 @@ const getFeed = async () => {
   writeTest.save();
   */
   
-  
+  /*
+
   const PostFavourite = Parse.Object.extend("PostFavourite")
 
   // Initialize the query.
@@ -65,7 +66,32 @@ const getFeed = async () => {
     results[i] && PostIds.push(results[i].get("toPost"))
   }
 
-  return PostIds
+  */
+  const Post = Parse.Object.extend("Post")
+
+  // Initialize the query
+  const PostQuery = new Parse.Query(Post)
+
+  // Retrieve the most recent ones
+  PostQuery.descending("createdAt")
+
+  // Limit of 10 items
+  PostQuery.limit(10)
+
+  // include user info (need to retrieve username specifically)
+  PostQuery.include("publicUser.username")
+
+  // set constraints to only include curated posts
+  PostQuery.equalTo("forCurated", "YES")
+ 
+  const results = await PostQuery.find()
+
+
+  
+
+  console.log(results)
+
+  return results
 
 }
 
@@ -73,11 +99,11 @@ const FeedItem = ({ item }) => {
   return (
     <div className="grid-item grid-item--width2">
       <img
-        src={item.attributes.thumbnail300._url}
+        src={item.attributes.thumbnail._url}
         className="img-fluid fit-image"
         alt="instafeed Generate"
       />
-      <p>{item.attributes.userName}</p>
+      <p>{item.attributes.publicUser.attributes['username']}</p>
     </div>
   )
 }
