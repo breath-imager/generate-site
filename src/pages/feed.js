@@ -36,37 +36,6 @@ const getFeed = async () => {
   writeTest.save();
   */
   
-  /*
-
-  const PostFavourite = Parse.Object.extend("PostFavourite")
-
-  // Initialize the query.
-  const PostFavouriteQuery = new Parse.Query(PostFavourite)
-
-  // retrieve the most recent ones
-  PostFavouriteQuery.descending("createdAt")
-
-  // only retrieve the last ten
-  PostFavouriteQuery.limit(10)
-
-  // include the post data with each comment
-  PostFavouriteQuery.include("toPost")
-  // Set constraints on your query to get the results you want.
-  //query.notEqualTo("myOtherAttribute", "myOtherValue")
-
-  // Execute and return the results of the query.
-  // This is shorthand, we can also write this as:
-  // const results = await query.find()
-  // return results
-  const results = await PostFavouriteQuery.find()
-  //return results
-
-  const PostIds = []
-  for (let i = 0; i < results.length; i++) {
-    results[i] && PostIds.push(results[i].get("toPost"))
-  }
-
-  */
   const Post = Parse.Object.extend("Post")
 
   // Initialize the query
@@ -76,7 +45,7 @@ const getFeed = async () => {
   PostQuery.descending("createdAt")
 
   // Limit of 10 items
-  PostQuery.limit(10)
+  PostQuery.limit(100)
 
   // include user info (need to retrieve username specifically)
   PostQuery.include("publicUser.username")
@@ -87,24 +56,62 @@ const getFeed = async () => {
   const results = await PostQuery.find()
 
 
-  
-
   console.log(results)
 
   return results
 
 }
 
-const FeedItem = ({ item }) => {
+const Img = ({ data }) => {
   return (
     <div className="grid-item grid-item--width2">
-      <img
-        src={item.attributes.thumbnail._url}
-        className="img-fluid fit-image"
-        alt="instafeed Generate"
-      />
-      <p>{item.attributes.publicUser.attributes['username']}</p>
+    <img
+      src={data.thumbnail._url}
+      className="img-fluid fit-image"
+      alt="instafeed Generate"
+    />
+    <p>{data.publicUser.attributes['username']}</p>
+  </div>
+  )
+
+}
+
+const Video = ({ data }) => {
+  const modalId = 'videoModal'
+  return (
+    <div>
+      <div className="grid-item grid-item--width2">
+        <a href="#" className="btn video video-modal" data-video={data.imageFile._url} data-toggle="modal" data-target="#videoModal">
+        <img
+          src={data.thumbnail._url}
+          className="img-fluid fit-image"
+          alt="instafeed Generate"
+        />
+        </a>
+        <p>{data.publicUser.attributes['username']}</p>
+
+          
+      </div>
+  
     </div>
+  ) 
+
+
+}
+
+const FeedItem = ({ item }) => {
+  return (
+    <div>
+      {
+        {
+          'PNG': <Img data={item.attributes} />,
+          'MP4': <Video data={item.attributes} />
+        } [item.attributes.extension]
+        
+      }
+      
+    </div>
+    
   )
 }
 
@@ -172,6 +179,21 @@ export default function Home() {
             </a>
           </p>
         </div>
+
+
+      <div className="modal fade" id="videoModal"tabIndex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div className="modal-dialog">
+        <div className="modal-content">
+           
+            <div className="modal-body">
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close"></button>
+                <iframe title="Blank" width="100%" height="100%" src="" frameBorder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen></iframe>
+            </div>
+        </div>
+      </div>
+    </div>
+
+      
       </div>
     </Layout>
   )
