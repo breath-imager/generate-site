@@ -12,7 +12,7 @@ export default function Touch(){
                         <h1>We like the way you see the world.</h1>
                         <p>Have a question? Need a feature? We’re all ears.</p>
                         <a href="https://apps.apple.com/ca/app/generate-video-photo-effects/id808563377" target="_blank"className="logoAppStore"/>
-                        <a href="mailto:contacto@generate.com" target="_blank" rel="noreferrer" className="btn">Get in touch</a>
+                        <a href="mailto:info@generateapp.com" target="_blank" rel="noreferrer" className="btn">Get in touch</a>
                     </div>
                 </div>
     )

@@ -99,7 +99,7 @@ export default function Home() {
                 <div className="col-12 col-md">
                     <h1>Contact</h1>
                     <p></p>
-                    <a href="mailto:contacto@generate.com" target="_blank" className="btn">Contact Us</a>
+                    <a href="mailto:info@generateapp.com" target="_blank" className="btn">Contact Us</a>
                 </div>
 
                 </div>

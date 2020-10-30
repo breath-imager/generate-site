@@ -77,7 +77,7 @@ const Img = ({ data }) => {
 }
 
 const Video = ({ data }) => {
-  const modalId = 'videoModal'
+  
   return (
     <div>
       <div className="grid-item grid-item--width2">
@@ -105,7 +105,7 @@ const FeedItem = ({ item }) => {
       {
         {
           'PNG': <Img data={item.attributes} />,
-          'MP4': <Video data={item.attributes} />
+          'MP4': <Img data={item.attributes} />
         } [item.attributes.extension]
         
       }
