@@ -17,7 +17,7 @@ import Foot from "./foot"
  */
 import "../assets/vendor/bootstrap/css/bootstrap.min.css"
 import "../assets/css/fonts.css"
-import "../assets/css/generate.css"  
+import "../assets/css/generate.css"
 
 /**
  *
