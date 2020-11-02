@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import ReactPlayer from "react-player/file"
 
 import reloadIcon from "../assets/images/reload-icon.svg"
+import playButtonIcon from "../assets/images/play-button.jpeg"
 
 const initializeParse = () => {
   // stored key in a .env file in root directory
@@ -117,16 +118,31 @@ const Video = ({ data, index, onImageLoaded }) => {
               />
             </>
           ) : (
-            <img
-              src={data.thumbnail._url}
-              id={`feed-item-thumbnail-${index}`}
-              className="img-fluid fit-image"
-              alt="instafeed Generate"
-              onLoad={() => {
-                onImageLoaded()
-                captureDimensions(`feed-item-thumbnail-${index}`)
-              }}
-            />
+            <>
+              <img
+                src={data.thumbnail._url}
+                id={`feed-item-thumbnail-${index}`}
+                className="img-fluid fit-image"
+                alt="instafeed Generate"
+                onLoad={() => {
+                  onImageLoaded()
+                  captureDimensions(`feed-item-thumbnail-${index}`)
+                }}
+              />
+              <div
+                className="video-overlay"
+                style={{
+                  width: dimensions.width,
+                  height: dimensions.height,
+                }}
+              >
+                <img
+                  src={playButtonIcon}
+                  id={`feed-item-play-button-${index}`}
+                  className="img-fluid fit-image"
+                />
+              </div>
+            </>
           )}
           {showLoading && (
             <div
