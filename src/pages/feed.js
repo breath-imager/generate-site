@@ -1,5 +1,5 @@
 import Parse from "parse"
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
 import ReactPlayer from "react-player/file"
 
@@ -14,7 +14,7 @@ const initializeParse = () => {
   Parse.serverURL = "https://generate-parse-dev.herokuapp.com/parse"
 }
 
-const getFeed = async () => {
+const getFeed = async (page = 0) => {
   // Define a name for our model ...
   // I don't understand Parse well but it seems unlike SQL
   // Data is just amorphous and you just query for data that matches
@@ -34,16 +34,28 @@ const getFeed = async () => {
   writeTest.save();
   */
 
+  // How much you want on a page
+  const displayLimit = 15
+
+  // Create the Post object
   const Post = Parse.Object.extend("Post")
 
   // Initialize the query
   const PostQuery = new Parse.Query(Post)
 
+  // Get the count on a collection
+  const count = await PostQuery.count()
+
   // Retrieve the most recent ones
   PostQuery.descending("createdAt")
 
   // Limit of 10 items
-  PostQuery.limit(100)
+  PostQuery.limit(displayLimit)
+
+  console.log(page)
+
+  // Ensure we paginate to the correct page
+  PostQuery.skip(page * displayLimit)
 
   // include user info (need to retrieve username specifically)
   PostQuery.include("publicUser.username")
@@ -53,7 +65,7 @@ const getFeed = async () => {
 
   const results = await PostQuery.find()
 
-  return results
+  return { page, results }
 }
 
 const Img = ({ data, onImageLoaded }) => {
@@ -249,12 +261,21 @@ const Feed = ({ data, imagesLoaded, setImageLoaded }) => {
 export default function Home() {
   const [parseResponse, setParseResponse] = React.useState(null)
   const [imagesLoaded, setImagesLoaded] = React.useState(false)
+  const [pageNumber, setPageNumber] = useState(-1)
   let loadedImages = []
+
+  const getNextPageOfFeed = async () => {
+    const { page, results } = await getFeed(pageNumber + 1)
+    setParseResponse(
+      parseResponse ? [...parseResponse, ...results] : [...results]
+    )
+    setPageNumber(page)
+  }
 
   useEffect(() => {
     const init = async () => {
       initializeParse()
-      setParseResponse(await getFeed())
+      await getNextPageOfFeed()
     }
 
     init()
@@ -292,9 +313,12 @@ export default function Home() {
             </div>
 
             <div className="buttonReload W-100 d-flex mt-5 mb-5">
-              <a href="/feed" className="mx-auto text-center">
+              <button
+                className="mx-auto text-center video-button"
+                onClick={getNextPageOfFeed}
+              >
                 <img src={reloadIcon} alt="Reload icon" />
-              </a>
+              </button>
             </div>
           </div>
         </section>
