@@ -1203,7 +1203,7 @@ ul.discStyle li:before {
 .video-loader {
   width: 100%;
   height: 100%;
-  top: 1rem;
+  top: 0.5rem;
   background: black;
   opacity: 1;
   position: absolute;
@@ -1226,4 +1226,24 @@ ul.discStyle li:before {
 
 .feed-item-hidden {
   visibility: hidden;
+}
+
+.video-button { 
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.video-button:focus {
+  outline: none;
+}
+
+.loading-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  font-size: 24px;
 }

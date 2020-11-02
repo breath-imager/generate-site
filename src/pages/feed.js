@@ -87,16 +87,45 @@ const Video = ({ data, index, onImageLoaded }) => {
     }
   }, [showVideo])
 
+  const ThumbnailFragment = () => {
+    return (
+      <>
+        <img
+          src={data.thumbnail._url}
+          id={`feed-item-thumbnail-${index}`}
+          className="img-fluid fit-image"
+          alt="instafeed Generate"
+          onLoad={() => {
+            onImageLoaded()
+            captureDimensions(`feed-item-thumbnail-${index}`)
+          }}
+        />
+        <div
+          className="video-overlay"
+          style={{
+            width: dimensions.width,
+            height: dimensions.height,
+          }}
+        >
+          <img
+            src={playButtonIcon}
+            id={`feed-item-play-button-${index}`}
+            className="img-fluid fit-image"
+          />
+        </div>
+      </>
+    )
+  }
+
   return (
     <div>
       <div
         className="grid-item grid-item--width2"
         style={{ position: "relative" }}
       >
-        <a
-          href="#"
-          onMouseOver={() => setShowVideo(true)}
-          onMouseOut={() => setShowVideo(false)}
+        <button
+          className="video-button"
+          onClick={() => setShowVideo(!showVideo)}
         >
           {showVideo ? (
             <>
@@ -107,6 +136,7 @@ const Video = ({ data, index, onImageLoaded }) => {
                     alt: "instafeed Generate",
                     autoPlay: true,
                     muted: true,
+                    playsInline: true,
                   },
                 }}
                 onReady={() => {
@@ -116,6 +146,29 @@ const Video = ({ data, index, onImageLoaded }) => {
                 width={dimensions.width}
                 height={dimensions.height}
               />
+              {showLoading && (
+                <div
+                  className="video-loader"
+                  style={{
+                    width: dimensions.width,
+                    height: dimensions.height,
+                  }}
+                >
+                  <>
+                    <img
+                      src={data.thumbnail._url}
+                      id={`feed-item-thumbnail-${index}`}
+                      className="img-fluid fit-image"
+                      alt="instafeed Generate"
+                      onLoad={() => {
+                        onImageLoaded()
+                        captureDimensions(`feed-item-thumbnail-${index}`)
+                      }}
+                    />
+                    <div className="loading-text">Loading...</div>
+                  </>
+                </div>
+              )}
             </>
           ) : (
             <>
@@ -144,16 +197,7 @@ const Video = ({ data, index, onImageLoaded }) => {
               </div>
             </>
           )}
-          {showLoading && (
-            <div
-              className="video-loader"
-              style={{
-                width: dimensions.width,
-                height: dimensions.height,
-              }}
-            />
-          )}
-        </a>
+        </button>
 
         <p>{data.publicUser.attributes["username"]}</p>
       </div>
