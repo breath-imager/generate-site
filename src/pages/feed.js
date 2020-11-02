@@ -87,6 +87,36 @@ const Video = ({ data, index, onImageLoaded }) => {
     }
   }, [showVideo])
 
+  const ThumbnailFragment = () => {
+    return (
+      <>
+        <img
+          src={data.thumbnail._url}
+          id={`feed-item-thumbnail-${index}`}
+          className="img-fluid fit-image"
+          alt="instafeed Generate"
+          onLoad={() => {
+            onImageLoaded()
+            captureDimensions(`feed-item-thumbnail-${index}`)
+          }}
+        />
+        <div
+          className="video-overlay"
+          style={{
+            width: dimensions.width,
+            height: dimensions.height,
+          }}
+        >
+          <img
+            src={playButtonIcon}
+            id={`feed-item-play-button-${index}`}
+            className="img-fluid fit-image"
+          />
+        </div>
+      </>
+    )
+  }
+
   return (
     <div>
       <div
@@ -123,7 +153,21 @@ const Video = ({ data, index, onImageLoaded }) => {
                     width: dimensions.width,
                     height: dimensions.height,
                   }}
-                />
+                >
+                  <>
+                    <img
+                      src={data.thumbnail._url}
+                      id={`feed-item-thumbnail-${index}`}
+                      className="img-fluid fit-image"
+                      alt="instafeed Generate"
+                      onLoad={() => {
+                        onImageLoaded()
+                        captureDimensions(`feed-item-thumbnail-${index}`)
+                      }}
+                    />
+                    <div className="loading-text">Loading...</div>
+                  </>
+                </div>
               )}
             </>
           ) : (
