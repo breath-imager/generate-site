@@ -117,12 +117,14 @@ const Video = ({ data, index, onImageLoaded }) => {
           style={{
             width: dimensions.width,
             height: dimensions.height,
+            
           }}
         >
           <img
             src={playButtonIcon}
             id={`feed-item-play-button-${index}`}
             className="img-fluid fit-image"
+            
           />
         </div>
       </>
@@ -138,6 +140,8 @@ const Video = ({ data, index, onImageLoaded }) => {
         <button
           className="video-button"
           onClick={() => setShowVideo(!showVideo)}
+          style = {{ borderWidth: "0"}}
+          
         >
           {showVideo ? (
             <>
@@ -157,6 +161,7 @@ const Video = ({ data, index, onImageLoaded }) => {
                 }}
                 width={dimensions.width}
                 height={dimensions.height}
+
               />
               {showLoading && (
                 <div
@@ -205,6 +210,7 @@ const Video = ({ data, index, onImageLoaded }) => {
                   src={playButtonIcon}
                   id={`feed-item-play-button-${index}`}
                   className="img-fluid fit-image"
+                  
                 />
               </div>
             </>
