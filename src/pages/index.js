@@ -9,7 +9,7 @@ import refractionFestImage from "../assets/images/home/home_banner_refraction.jp
 import homeVideo from "../assets/video/home_video_1_xs2.mp4"
 import Layout from "../components/layout"
 
-const APP_URL = 'https://apps.apple.com/us/app/generate-video-photo-effects/id808563377'
+const APP_URL = 'https://apps.apple.com/app/id808563377'
 
 export default function Home() {
   return (

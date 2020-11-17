@@ -2,7 +2,7 @@ import React from "react"
 import Touch from "./touch"
 
 import imageAppStoreLogo from "../assets/images/app-store-logo.png"
-const APP_URL = 'https://apps.apple.com/us/app/generate-video-photo-effects/id808563377'
+const APP_URL = 'https://apps.apple.com/app/id808563377'
 
 export default function Foot(props){
 
