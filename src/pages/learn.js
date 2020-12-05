@@ -2,9 +2,11 @@ import React from "react"
 
 import Layout from "../components/layout"
 import learnHeader from "../assets/images/learn/learn-header.jpg"
-import learnMix from "../assets/images/learn/learn_mix.jpg"
-import learnClips from "../assets/images/learn/learn_clips.jpg"
-import learnMusic from "../assets/images/learn/learn_music.jpg"
+import presetDice from "../assets/images/learn/preset_dice.jpg"
+import reactBeat from "../assets/images/learn/react_beat.jpg"
+import importVideo from "../assets/images/learn/import_video.jpg"
+import saveShare from "../assets/images/learn/save_share.jpg"
+import stitchImageVideos from "../assets/images/learn/stitch_images_videos.jpg"
 
 
 export default function Home() {
@@ -27,33 +29,58 @@ export default function Home() {
                 <div className="container-fluid">
                     <div className="row featuredTop">
                         <div className="col-12 col-md-7">
-                            <img src={learnMix} className="img-fluid fit-image" alt="Learn Mix"/>
+                            <img src={importVideo} className="img-fluid fit-image" alt="Learn Mix"/>
                         </div>
                         <div className="col-12 col-md-5">
                             <hr className="thick"/>
-                            <h3>Learn how to build custom filters, remix, and and save them.</h3>
-                            <a href="#" className="btn video video-modal" data-video="https://player.vimeo.com/video/432534020" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
+                            <h3>Importing videos, adding custom music, and exporting multiple size.</h3>
+                            <a href="#" className="btn video video-modal" data-video="https://player.vimeo.com/video/487466542" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
                         </div>
                     </div>
                     <div className="row featuredTop">
                     <div className="col-12 col-md-7">
-                        <img src={learnClips} className="img-fluid fit-image" alt="Learn Clips"/>
+                        <img src={saveShare} className="img-fluid fit-image" alt="Learn Clips"/>
                     </div>
                     <div className="col-12 col-md-5">
                         <hr className="thick"/>
-                        <h3>Learn how to shoot multiple shots and cut them together.</h3>
-                        <a href="#" className="btn video video-modal" data-video="https://player.vimeo.com/video/432535010" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
+                        <h3>Saving and sharing personalized filter presets.</h3>
+                        <a href="#" className="btn video video-modal" data-video="https://player.vimeo.com/video/487466608" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
                     </div>
                     </div>
 
                     <div className="row featuredTop">
                     <div className="col-12 col-md-7">
-                        <img src={learnMusic} className="img-fluid fit-image" alt="Learn Music"/>
+                        <img src={stitchImageVideos} className="img-fluid fit-image" alt="Learn Music"/>
                     </div>
                     <div className="col-12 col-md-5">
                         <hr className="thick"/>
-                        <h3>Learn how make your visuals dance with your own music.</h3>
-                        <a href="#" className="btn video video-modal" data-video="https://player.vimeo.com/video/432535264" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
+                        <h3>How to create and stitch multiple videos and images together</h3>
+                        <a href="#" className="btn video video-modal" data-video="https://player.vimeo.com/video/487466628" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
+          
+                       
+                    </div>
+                    </div>
+                    <div className="row featuredTop">
+                    <div className="col-12 col-md-7">
+                        <img src={presetDice} className="img-fluid fit-image" alt="Learn Music"/>
+                    </div>
+                    <div className="col-12 col-md-5">
+                        <hr className="thick"/>
+                        <h3>How to explore new filter combinations with presets and dice button</h3>
+                        <a href="#" className="btn video video-modal" data-video="https://player.vimeo.com/video/487466644" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
+          
+                       
+                    </div>
+                    </div>
+
+                    <div className="row featuredTop">
+                    <div className="col-12 col-md-7">
+                        <img src={reactBeat} className="img-fluid fit-image" alt="Learn Music"/>
+                    </div>
+                    <div className="col-12 col-md-5">
+                        <hr className="thick"/>
+                        <h3>How to make filters react to the beat</h3>
+                        <a href="#" className="btn video video-modal" data-video="https://player.vimeo.com/video/487466681" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
           
                        
                     </div>
