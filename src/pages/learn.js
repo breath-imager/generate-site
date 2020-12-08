@@ -1,6 +1,7 @@
 import React from "react"
 
 import Layout from "../components/layout"
+
 import learnHeader from "../assets/images/learn/learn-header.jpg"
 import presetDice from "../assets/images/learn/preset_dice.jpg"
 import reactBeat from "../assets/images/learn/react_beat.jpg"
@@ -54,7 +55,7 @@ export default function Home() {
                     </div>
                     <div className="col-12 col-md-5">
                         <hr className="thick"/>
-                        <h3>How to create and stitch multiple videos and images together</h3>
+                        <h3>How to create and stitch multiple videos and images together.</h3>
                         <a href="#" className="btn video video-modal" data-video="https://player.vimeo.com/video/487466628" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
           
                        
@@ -66,7 +67,7 @@ export default function Home() {
                     </div>
                     <div className="col-12 col-md-5">
                         <hr className="thick"/>
-                        <h3>How to explore new filter combinations with presets and dice button</h3>
+                        <h3>How to explore new filter combinations with presets and dice button.</h3>
                         <a href="#" className="btn video video-modal" data-video="https://player.vimeo.com/video/487466644" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
           
                        
@@ -79,7 +80,7 @@ export default function Home() {
                     </div>
                     <div className="col-12 col-md-5">
                         <hr className="thick"/>
-                        <h3>How to make filters react to the beat</h3>
+                        <h3>How to make filters react to the beat.</h3>
                         <a href="#" className="btn video video-modal" data-video="https://player.vimeo.com/video/487466681" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
           
                        

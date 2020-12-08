@@ -2,7 +2,7 @@ import React from "react"
 
 
 import filterImage from "../assets/images/home/filters-section.jpg"
-
+import presetDice from "../assets/images/learn/preset_dice.jpg"
 import imageAppStoreLogo from "../assets/images/app-store-logo.png"
 import learnClips from "../assets/images/learn/learn_clips.jpg"
 import refractionFestImage from "../assets/images/home/home_banner_refraction.jpg"
@@ -99,18 +99,15 @@ export default function Home() {
             <div className="row featuredTop">
               <div className="col-12 col-md-7">
                 <img
-                  src={learnClips}
+                  src={presetDice}
                   className="img-fluid fit-image"
                   alt="Sebastian Stam"
                 />
               </div>
               <div className="col-12 col-md-5">
                 <hr className="thick" />
-                <h3>
-                Learn how to shoot multiple shots and cut them together.
-                </h3>
-                <a href="#" className="btn video video-modal" data-video="https://player.vimeo.com/video/432535010" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
-
+                <h3>How to explore new filter combinations with presets and dice button.</h3>
+                <a href="#" className="btn video video-modal" data-video="https://player.vimeo.com/video/487466644" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
                
               </div>
             </div>
