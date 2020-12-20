@@ -3,9 +3,10 @@ import { useForm } from "react-hook-form"
 import Layout from "../components/layout"
 import contactHeader from "../assets/images/contact/contact-header.jpg"
 
-//const GATEWAY_URL = "http://localhost:5000/subscribe?type=newsletter"
-const GATEWAY_URL = "https://generate-sendgrid.herokuapp.com/subscribe?type=newsletter" 
-//const GATEWAY_URL = "http://ptsv2.com/t/ew/post"
+const GATEWAY_URL = "https://generate-sendgrid.herokuapp.com/subscribe?type=creators" 
+//const GATEWAY_URL = "https://arcane-thicket-82914.herokuapp.com"
+//const GATEWAY_URL = "http://localhost:5000/subscribe?type=creators"
+//const GATEWAY_URL = "http://ptsv2.com/t/jvyng-1608234775/post"
 const required = "This field is required";
 
 export default function Home() {
@@ -46,7 +47,7 @@ export default function Home() {
 
     const showThankYou = (
         <div className="msg-confirm">
-          <p>Email added to our newsletter!</p>
+          <p>Thank you! Your free annual subscription to Generate will be sent by email shortly.</p>
           
         </div>
       );
@@ -70,6 +71,7 @@ export default function Home() {
         </label>
         <div className="submit-wrapper">
         <br/>
+        
         <input type="submit" value="subscribe"  disabled={isSubmitting} className="btn btn-primary btn-suscribe"/>
         </div>        
     </form>
@@ -91,27 +93,12 @@ export default function Home() {
             </header>
 
 
-            <section className="contactContent">
-            <div className="container-fluid">
-                <div className="row">
-                <div className="col-12 col-md">
-                    <h1>About</h1>
-                    <p>Generate is a powerful mobile photo and video editing app for unique thinkers. We have one goal: free today’s creators to stand out. You’re custom. We’re customizable. It’s a match made in digital heaven.</p>
-                </div>
-                <div className="col-12 col-md">
-                    <h1>Contact</h1>
-                    <p></p>
-                    <a href="mailto:info@generateapp.com" target="_blank" className="btn">Contact Us</a>
-                </div>
-
-                </div>
-            </div>
-            </section>
+           
             <footer>           
                <div className="row footerTop">
                 <div className="col-12 col-md-12 text-center">
-                    <h1>Get Generate in your inbox</h1>
-                    <h2>No spam, good vibes only</h2>
+                    <h1>Enter your email</h1>
+                    <h2>And we will send you a free Annual Subscription to Generate Pro</h2>
                     <div className="text-side">
                     {errors && errors.submit && showSubmitError(errors.submit.message)}
                     </div>

@@ -1,7 +1,6 @@
 import React from "react"
 
 import Layout from "../components/layout"
-
 import learnHeader from "../assets/images/learn/learn-header.jpg"
 import presetDice from "../assets/images/learn/preset_dice.jpg"
 import reactBeat from "../assets/images/learn/react_beat.jpg"
