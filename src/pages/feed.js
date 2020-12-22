@@ -123,7 +123,7 @@ const Video = ({ data, index, onImageLoaded }) => {
           <img
             src={playButtonIcon}
             id={`feed-item-play-button-${index}`}
-            className="img-fluid fit-image"
+            className="img-fluid"
             
           />
         </div>
@@ -209,7 +209,7 @@ const Video = ({ data, index, onImageLoaded }) => {
                 <img
                   src={playButtonIcon}
                   id={`feed-item-play-button-${index}`}
-                  className="img-fluid fit-image"
+                  className="img-fluid"
                   
                 />
               </div>

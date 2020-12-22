@@ -90,7 +90,7 @@ span {
 }
 
 header {
-  height: 70vh;
+  height: 100vh;
   overflow: hidden;
   top: 0;
   left: 0;
@@ -167,7 +167,7 @@ b, strong {
 
 /*-------- home -----------*/
 .generateHeaderContent {
-  width: 60%;
+  width: 90%;
 }
 
 header video {
@@ -199,6 +199,14 @@ header .overlay {
   background-color: black;
   opacity: 0.5;
   z-index: 1;
+}
+
+section .video {
+  height: 80vh;
+  width: 80%;
+  float: right;
+  position: relative;
+  overflow: hidden;
 }
 
 .generateHeaderContent h1 {
@@ -868,7 +876,7 @@ ul.discStyle li {
 }
 
 ul.discStyle li:before {
-  content: '';
+  content: "";
   border: 3px #000 solid !important;
   border-radius: 50px;
   margin-top: 5px;
@@ -966,6 +974,23 @@ ul.discStyle li:before {
   a.btn {
     font-size: 13px;
     line-height: 16px;
+  }
+
+  section .video {
+    width: 100%;
+  }
+
+  .generateSubHeader {
+    height: auto;
+  }
+
+  .generateSubHeader .row .col-md-6 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .generateSubHeader .row .col-md-6:last-child {
+    padding: 2rem
   }
 
   .generateService h1 {
@@ -1184,7 +1209,7 @@ ul.discStyle li:before {
   }
 
   .navbar-nav .nav-item a::after {
-    content: '';
+    content: ',';
   }
 
   .navbar-nav .nav-item:last-of-type a::after {
@@ -1197,55 +1222,4 @@ ul.discStyle li:before {
     padding-left: 0;
     padding-right: 0
   }
-}
-
-/* ----- FEED ----- */
-.video-loader {
-  width: 100%;
-  height: 100%;
-  top: 0.5rem;
-  background: WHITE;
-  opacity: 1;
-  position: absolute;
-  outline: none;
-}
-
-.video-overlay {
-  width: 100%;
-  height: 100%;
-  top: 1rem;
-  opacity: 0.7;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.feed-item {
-  visibility: unset;
-}
-
-.feed-item-hidden {
-  visibility: hidden;
-}
-
-.video-button { 
-  -webkit-appearance: none;
-    -moz-appearance: none;
-    outline: none;
-    padding: 0;
-    margin: 0;
-}
-
-.video-button:focus {
-  outline: none;
-}
-
-.loading-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: white;
-  font-size: 24px;
 }

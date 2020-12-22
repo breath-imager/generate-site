@@ -46,16 +46,24 @@ export default function Home() {
           className="bg-image-full generateSubHeader d-flex"
           style={{ backgroundImage: `url(${filterImage})` }}
         >
-          <div className="generateHeaderContent align-self-center mx-auto text-center">
+          <div class="container-fluid">
+        <div class="row">
+        <div class="col-12 col-md-6 my-auto">
+          <div class="video">
+            <iframe src="https://player.vimeo.com/video/492618351?byline=0&amp;portrait=0&amp;color=3a6774&amp;autoplay=0&amp;loop=1" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" frameborder="0" height="100%" width="100%" class="__web-inspector-hide-shortcut__"></iframe>
+          </div>
+        </div>
+        <div class="col-12 col-md-6  my-auto">
+          <div class="generateHeaderContent">
             <h1>Filters without limits</h1>
-            <h2>
-              Realize your vision with custom effect combinations. Use our
-              editing tools to take presets to new heights.
-            </h2>
+            <h2>Realize your vision with custom effect combinations. Use our editing tools to take presets to new heights.</h2>
             <a href={APP_URL} className="btn">
               Download Generate
             </a>
           </div>
+        </div>
+        </div>
+        </div>
         </section>
 
         {/* services section */}
@@ -116,8 +124,7 @@ export default function Home() {
                 <hr className="thick" />
                 <h3>Refraction presented by Generate</h3>
                 <p>
-                  An online festival presented in and around the Summer Solstice
-                  in natural and digital environments.
+                Refraction is a festival and ongoing project celebrating electronic music, visual art & internet culture produced and curated by Generate. The first years festival happened in the summer of 2020. Thank you to all of our artists, musicians and partners who contributed to the first edition. To watch all of the archived performances, you can view them here(link to refraction) — or special features with our partners at <a href="https://www.contacttokyo.com/" target="_blank">Contact</a>, <a href="https://crackmagazine.net/" target="_blank">Crack</a>, <a href="https://www.factmag.com/" target="_blank">FACT</a>, <a href="http://www.mutek.org/" target="_blank">MUTEK</a>, <a href="http://www.publicrecords.tv/" target="_blank">Public Access</a> and <a href="https://worldwidefm.net/" target="_blank">Worldwide FM</a>.
                 </p>
                 <a href="https://www.refractionfestival.com" className="btn" target="_blank">
                   Visit Website
