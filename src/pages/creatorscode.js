@@ -47,7 +47,7 @@ export default function Home() {
 
     const showThankYou = (
         <div className="msg-confirm">
-          <p>Thank you! Your free annual subscription to Generate will be sent by email shortly.</p>
+          <p>Thank you! You will receive an email with instructions shortly.</p>
           
         </div>
       );
@@ -97,8 +97,10 @@ export default function Home() {
             <footer>           
                <div className="row footerTop">
                 <div className="col-12 col-md-12 text-center">
-                    <h1>Enter your email</h1>
-                    <h2>And we will send you a free Annual Subscription to Generate Pro</h2>
+                    
+
+<h1>As part of Generate's mission we believe in extending our software to as many creative minds as possible.</h1>
+<h2>To redeem the codes enter them in the “Redeem Gift Card or Code” page in their App Store account settings.  Email us at <a href="mailto:info@generateapp.com" target="_blank" >info@generateapp.com</a> if you have any questions or issues during the process.</h2>
                     <div className="text-side">
                     {errors && errors.submit && showSubmitError(errors.submit.message)}
                     </div>
