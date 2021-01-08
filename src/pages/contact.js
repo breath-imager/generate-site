@@ -4,8 +4,8 @@ import Layout from "../components/layout"
 import contactHeader from "../assets/images/contact/contact-header.jpg"
 const required = "This field is required";
 
-const GATEWAY_URL = "http://localhost:5000/subscribe?type=newsletter"
-//const GATEWAY_URL = "https://generate-sendgrid.herokuapp.com/subscribe?type=newsletter" 
+//const GATEWAY_URL = "http://localhost:5000/subscribe?type=newsletter"
+const GATEWAY_URL = "https://generate-sendgrid.herokuapp.com/subscribe?type=newsletter" 
 //const GATEWAY_URL = "http://ptsv2.com/t/ew/post"
 
 
