@@ -1,12 +1,13 @@
-import React, { useState} from "react"
+import React, { useState, useRef } from "react"
 import { useForm } from "react-hook-form"
 import Layout from "../components/layout"
 import contactHeader from "../assets/images/contact/contact-header.jpg"
-
-//const GATEWAY_URL = "http://localhost:5000/subscribe?type=newsletter"
-const GATEWAY_URL = "https://generate-sendgrid.herokuapp.com/subscribe?type=newsletter" 
-//const GATEWAY_URL = "http://ptsv2.com/t/ew/post"
 const required = "This field is required";
+
+const GATEWAY_URL = "http://localhost:5000/subscribe?type=newsletter"
+//const GATEWAY_URL = "https://generate-sendgrid.herokuapp.com/subscribe?type=newsletter" 
+//const GATEWAY_URL = "http://ptsv2.com/t/ew/post"
+
 
 export default function Home() {
     
@@ -20,7 +21,7 @@ export default function Home() {
     } = useForm()
 
 
-
+    const refContainer = useRef("Test");
     const onSubmit = (data) => {
       const formdata = new FormData()
       formdata.append("email", data['email'])
@@ -33,13 +34,14 @@ export default function Home() {
           if (response.status === 200) {
             // Do whatever you want to do on success
             setSubmitted(true)
-          } else if (response.status === 402) {
-            setError("submit", "submitError", `Oops! There seems to be an issue!`);
+          } else {
+            setError("submit", "submitError", "Oops! There seems to be an issue!" + response.status);
           }
         })
         .catch((error) => {
           setError("submit", "submitError", `${error.message}`);
         });
+       
     };
 
     const showSubmitError = msg => <p className="msg-error">{msg}</p>;
@@ -52,8 +54,9 @@ export default function Home() {
       );
 
     const showForm = (
+      
     <form method="post" onSubmit={handleSubmit(onSubmit)} className="form-inline w-100"> 
-        <label htmlFor="email">
+        
             <input 
                 type="text" 
                 className="form-control email" 
@@ -65,9 +68,9 @@ export default function Home() {
                 disabled={isSubmitting}
             />
             {errors.email && (
-          <div className="msg-error">{errors.email.message}</div>
+            <div className="error-message">{errors.email && <p>{errors.email.message}</p>}</div>
         )}
-        </label>
+       
         <div className="submit-wrapper">
         <br/>
         <input type="submit" value="subscribe"  disabled={isSubmitting} className="btn btn-primary btn-suscribe"/>

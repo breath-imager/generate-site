@@ -4,7 +4,7 @@ import React from "react"
 import filterImage from "../assets/images/home/filters-section.jpg"
 import presetDice from "../assets/images/learn/preset_dice.jpg"
 import imageAppStoreLogo from "../assets/images/app-store-logo.png"
-import learnClips from "../assets/images/learn/learn_clips.jpg"
+
 import refractionFestImage from "../assets/images/home/home_banner_refraction.jpg"
 import homeVideo from "../assets/video/home_video_1_xs2.mp4"
 import Layout from "../components/layout"
@@ -46,15 +46,15 @@ export default function Home() {
           className="bg-image-full generateSubHeader d-flex"
           style={{ backgroundImage: `url(${filterImage})` }}
         >
-          <div class="container-fluid">
-        <div class="row h-100">
-        <div class="col-12 col-md-6 my-auto">
-          <div class="videoVertical">
-            <iframe src="https://player.vimeo.com/video/492618351?byline=0&amp;portrait=0&amp;color=3a6774&amp;autoplay=0&amp;loop=1" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" frameborder="0" height="100%" width="100%" class="__web-inspector-hide-shortcut__"></iframe>
+          <div className="container-fluid">
+        <div className="row h-100">
+        <div className="col-12 col-md-6 my-auto">
+          <div className="videoVertical">
+            <iframe src="https://player.vimeo.com/video/492618351?byline=0&amp;portrait=0&amp;color=3a6774&amp;autoplay=0&amp;loop=1" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen="" frameBorder="0" height="100%" width="100%" className="__web-inspector-hide-shortcut__"></iframe>
           </div>
         </div>
-        <div class="col-12 col-md-6  my-auto">
-          <div class="generateHeaderContent">
+        <div className="col-12 col-md-6  my-auto">
+          <div className="generateHeaderContent">
             <h1>Filters without limits</h1>
             <h2>Realize your vision with custom effect combinations. Use our editing tools to take presets to new heights.</h2>
             <a href={APP_URL} className="btn">
@@ -111,11 +111,12 @@ export default function Home() {
                   className="img-fluid fit-image"
                   alt="Sebastian Stam"
                 />
+                
               </div>
               <div className="col-12 col-md-5">
                 <hr className="thick" />
                 <h3>How to explore new filter combinations with presets and dice button.</h3>
-                <a href="#" className="btn" data-video="https://player.vimeo.com/video/487466644" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
+                <a href="#" className="btn video video-modal" data-video="https://player.vimeo.com/video/487466644" data-toggle="modal" data-target="#videoModal">watch tutorial</a>
                
               </div>
             </div>

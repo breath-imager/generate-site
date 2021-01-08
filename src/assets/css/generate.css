@@ -1306,3 +1306,22 @@ ul.discStyle li:before {
   color: white;
   font-size: 24px;
 }
+
+/********** CONTACT *************/
+.error-message p {
+  color: #d8000c;
+  font-size: 17px;
+  line-height: 42px;
+  letter-spacing: -0.28px;
+}
+.error-message p::before {
+  display: inline;
+  content: "⚠ ";
+}
+
+.msg-confirm p {
+  color: #009bd8;
+  font-size: 30px;
+  line-height: 42px;
+  letter-spacing: -0.28px;
+}

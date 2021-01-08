@@ -1,4 +1,4 @@
-import React, { useState} from "react"
+import React, { useState, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import Layout from "../components/layout"
 import contactHeader from "../assets/images/contact/contact-header.jpg"
@@ -11,36 +11,53 @@ const required = "This field is required";
 
 export default function Home() {
     
+  
     const [submitted, setSubmitted] = useState(false)
+
     const {
       register,
       handleSubmit,
-      setError,
       errors,
+      setError,
       formState: { isSubmitting }
     } = useForm()
 
 
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
+      console.log(data, "data")
+      console.log(errors)
       const formdata = new FormData()
       formdata.append("email", data['email'])
-      fetch(GATEWAY_URL, {
+      formdata.append("promo", data['promo'])
+      await fetch(GATEWAY_URL, {
         method: 'POST',
         body: formdata,
         redirect: 'follow',
       })
         .then((response) => {
+          console.log(response)
           if (response.status === 200) {
             // Do whatever you want to do on success
             setSubmitted(true)
+            console.log(response)
           } else if (response.status === 402) {
-            setError("submit", "submitError", `Oops! There seems to be an issue!`);
+            
+            setError(
+              "submit", {
+                type: "manual",
+                message: "Invalid Code, Try Again", 
+              }
+              );
+            
+              
           }
         })
         .catch((error) => {
           setError("submit", "submitError", `${error.message}`);
         });
+        
+       
     };
 
     const showSubmitError = msg => <p className="msg-error">{msg}</p>;
@@ -54,7 +71,21 @@ export default function Home() {
 
     const showForm = (
     <form method="post" onSubmit={handleSubmit(onSubmit)} className="form-inline w-100"> 
-        <label htmlFor="email">
+        
+        
+        <div className="container">
+            <input 
+              type="text"
+              className="form-control"
+              placeholder="Enter promotional code"
+              name="promo"
+              id="promo"
+              ref={register({ required })}
+            />
+        </div>
+        <div className="error-message">{errors.promo && <p>{errors.promo.message}</p>}</div>
+        
+        <div className="container"><br/>
             <input 
                 type="text" 
                 className="form-control email" 
@@ -65,10 +96,11 @@ export default function Home() {
                 ref={register({ required })}
                 disabled={isSubmitting}
             />
-            {errors.email && (
-          <div className="msg-error">{errors.email.message}</div>
-        )}
-        </label>
+          <br/>
+           
+        </div>
+        <div className="error-message">{errors.email && <p>{errors.email.message}</p>}</div>
+        
         <div className="submit-wrapper">
         <br/>
         
@@ -97,12 +129,10 @@ export default function Home() {
             <footer>           
                <div className="row footerTop">
                 <div className="col-12 col-md-12 text-center">
-                    
-
-<h1>As part of Generate's mission we believe in extending our software to as many creative minds as possible.</h1>
-<h2>To redeem the codes enter them in the “Redeem Gift Card or Code” page in their App Store account settings.  Email us at <a href="mailto:info@generateapp.com" target="_blank" >info@generateapp.com</a> if you have any questions or issues during the process.</h2>
+                  <h1>As part of Generate's mission we believe in extending our software to as many creative minds as possible.</h1>
+                  <h2>To redeem the codes enter them in the “Redeem Gift Card or Code” page in their App Store account settings.  Email us at <a href="mailto:info@generateapp.com" target="_blank" >info@generateapp.com</a> if you have any questions or issues during the process.</h2>
                     <div className="text-side">
-                    {errors && errors.submit && showSubmitError(errors.submit.message)}
+                    <div className="error-message">{errors.submit && <p>{errors.submit.message}</p>}</div>       
                     </div>
                     <div className="form-side">{submitted ? showThankYou : showForm}</div>
                 </div>
