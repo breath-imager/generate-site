@@ -27,7 +27,7 @@ export default function Foot(props){
                                 <a href="/contact">About</a>
                             </div>
                             <div className="col-12 col-md-4">
-                                <h4>Comunity</h4>
+                                <h4>Community</h4>
                                 <a href="/community.html">Guidelines</a>
                                 <a href="/faq.html">FAQ</a>
                             </div>
