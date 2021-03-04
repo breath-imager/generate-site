@@ -72,7 +72,7 @@ export default function Home() {
       <div className="container">
         <input
           type="text"
-          className="form-control"
+          className="form-control email"
           placeholder="Enter promotional code"
           name="promo"
           id="promo"
