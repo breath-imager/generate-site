@@ -27,7 +27,7 @@ export default function Home() {
   const onSubmit = async data => {
     const formdata = new FormData()
     formdata.append("email", data["email"])
-    formdata.append("promo", data["promo"])
+    formdata.append("promo", data["promo"].toUpperCase())
 
     await fetch(GATEWAY_URL, {
       method: "POST",
